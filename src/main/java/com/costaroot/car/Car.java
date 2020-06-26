@@ -1,31 +1,31 @@
 package com.costaroot.car;
 
-import com.costaroot.transports.Transports;
+import com.costaroot.transport.Transport;
 
-public class Car implements Transports {
+public class Car implements Transport {
     private final String carsModel;
     private double speed;
-    private boolean engineIsRun;
+    private boolean isEngine;
 
     public Car(String carsModel) {
         this.carsModel = carsModel;
-        this.engineIsRun = false;
+        this.isEngine = false;
         this.speed = 0;
     }
 
     public void startEngine() {
         System.out.println("Engine is started");
-        engineIsRun = true;
+        isEngine = true;
     }
 
     public void stopEngine() {
-        engineIsRun = false;
+        isEngine = false;
         speed = 0;
         System.out.println("Engine is stopped");
     }
 
     public void move(double speed) {
-        if (engineIsRun) {
+        if (isEngine) {
             this.speed = speed;
             System.out.println(carsModel + " is moving with speed " + speed);
         } else {
