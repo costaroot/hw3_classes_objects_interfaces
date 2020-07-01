@@ -5,27 +5,27 @@ import com.costaroot.transport.Transport;
 public class Car implements Transport {
     private final String carsModel;
     private double speed;
-    private boolean isEngine;
+    private boolean isEngineStarted;
 
     public Car(String carsModel) {
         this.carsModel = carsModel;
-        this.isEngine = false;
+        this.isEngineStarted = false;
         this.speed = 0;
     }
 
     public void startEngine() {
         System.out.println("Engine is started");
-        isEngine = true;
+        isEngineStarted = true;
     }
 
     public void stopEngine() {
-        isEngine = false;
+        isEngineStarted = false;
         speed = 0;
         System.out.println("Engine is stopped");
     }
 
     public void move(double speed) {
-        if (isEngine) {
+        if (isEngineStarted) {
             this.speed = speed;
             System.out.println(carsModel + " is moving with speed " + speed);
         } else {
